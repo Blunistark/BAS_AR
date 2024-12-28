@@ -3,13 +3,6 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    // Dynamically load the A-Frame library
-    const script = document.createElement('script');
-    script.src = 'https://aframe.io/releases/0.9.2/aframe.min.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Access the device camera with higher resolution settings
     const video = document.getElementById('background-video');
     navigator.mediaDevices.getUserMedia({
       video: {
@@ -24,7 +17,6 @@ function App() {
     }).catch((error) => {
       console.log('Error accessing camera: ', error);
     });
-
   }, []);
 
   return (
